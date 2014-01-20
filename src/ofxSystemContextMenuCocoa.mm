@@ -20,13 +20,13 @@
 	NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:name action:@selector(itemSelected:) keyEquivalent:@""];
 	[item setTarget:self];
 	[_menu addItem:item];
-	
+	[item release];
 }
 
 - (void)itemSelected:(id)sender
 {
-	NSLog(@"Item selected!");
-	//ofLog() << "item selected" << std::endl;
+	NSMenuItem *item = (NSMenuItem *)sender;
+	NSLog(@"Item selected: %@", item.title);
 }
 
 @end
