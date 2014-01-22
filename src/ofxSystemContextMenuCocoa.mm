@@ -2,6 +2,7 @@
 
 @implementation ofxSystemContextMenuCocoa
 @synthesize menu = _menu;
+@synthesize ofxMenu = _ofxMenu;
 
 - (id)init
 {
@@ -15,18 +16,18 @@
 	return self;
 }
 
-- (void)addItem:(NSString *)name
+- (void)addItem:(NSMenuItem *)item
 {
-	NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:name action:@selector(itemSelected:) keyEquivalent:@""];
 	[item setTarget:self];
 	[_menu addItem:item];
-	[item release];
 }
 
 - (void)itemSelected:(id)sender
 {
 	NSMenuItem *item = (NSMenuItem *)sender;
-	NSLog(@"Item selected: %@", item.title);
+	NSInteger index = [_menu indexOfItem:item];
+	
+	if (_ofxMenu) _ofxMenu->itemSelectedCallback(index);
 }
 
 @end

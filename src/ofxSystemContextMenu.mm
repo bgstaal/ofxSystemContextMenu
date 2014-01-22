@@ -1,32 +1,40 @@
 #include "ofxSystemContextMenu.h"
 #include "ofApp.h"
 
+#ifdef TARGET_OSX
+
 ofxSystemContextMenu::ofxSystemContextMenu()
 {
-	#ifdef TARGET_OSX
-		_cocoaMenu = [[ofxSystemContextMenuCocoa alloc] init];
-	#endif
+	_cocoaMenu = [[ofxSystemContextMenuCocoa alloc] init];
+	_cocoaMenu.ofxMenu = this;
 }
 
 ofxSystemContextMenu::~ofxSystemContextMenu()
 {
-	#ifdef TARGET_OSX
-		[_cocoaMenu release];
-	#endif
+	[_cocoaMenu release];
 }
 
-void ofxSystemContextMenu::addItem(string name)
+ofxSystemContextMenuItem *ofxSystemContextMenu::addItem(std::string name)
 {
-	#ifdef TARGET_OSX
-		NSString *nsName = [NSString stringWithCString:name.c_str() encoding:NSUTF8StringEncoding];
-		[_cocoaMenu addItem: nsName];
-	#endif
+	ofxSystemContextMenuItemPtr item(new ofxSystemContextMenuItem(name));
+	[_cocoaMenu addItem: item->cocoaMenuItem];
+	
+	_menuItems.push_back(item);
+	
+	return item.get();
 }
 
 void ofxSystemContextMenu::show()
 {
-	#ifdef TARGET_OSX
-		NSWindow * window = (NSWindow * )ofGetCocoaWindow();
-		[NSMenu popUpContextMenu:_cocoaMenu.menu withEvent:[NSApp currentEvent] forView:window.contentView];
-	#endif
+	NSWindow * window = (NSWindow * )ofGetCocoaWindow();
+	[NSMenu popUpContextMenu:_cocoaMenu.menu withEvent:[NSApp currentEvent] forView:window.contentView];
 }
+
+void ofxSystemContextMenu::itemSelectedCallback(int index)
+{
+	ofxSystemContextMenuEventArgs args;
+	args.item = _menuItems[index].get();
+	ofNotifyEvent(itemSelected, args, this);
+}
+
+#endif

@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 
+class ofxSystemContextMenuEventArgs;
+
 class ofApp : public ofBaseApp{
 	public:
 		void setup();
@@ -17,4 +19,6 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+	
+		void contextMenuItemSelectedHandler(ofxSystemContextMenuEventArgs &e);
 };

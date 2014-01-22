@@ -10,6 +10,7 @@
 		4EA6DB9617C549BD0014CE1C /* ofApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4EA6DB9417C549BD0014CE1C /* ofApp.mm */; };
 		4EF5DDFD188DDAAD00700508 /* ofxSystemContextMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5DDFB188DDAAD00700508 /* ofxSystemContextMenu.mm */; };
 		4EF5DE02188DDC3D00700508 /* ofxSystemContextMenuCocoa.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5DE01188DDC3D00700508 /* ofxSystemContextMenuCocoa.mm */; };
+		4EF5DE0B188F23F300700508 /* ofxSystemContextMenuItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5DE09188F23F300700508 /* ofxSystemContextMenuItem.mm */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -68,6 +69,9 @@
 		4EF5DDFC188DDAAD00700508 /* ofxSystemContextMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSystemContextMenu.h; sourceTree = "<group>"; };
 		4EF5DE00188DDC3D00700508 /* ofxSystemContextMenuCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSystemContextMenuCocoa.h; sourceTree = "<group>"; };
 		4EF5DE01188DDC3D00700508 /* ofxSystemContextMenuCocoa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxSystemContextMenuCocoa.mm; sourceTree = "<group>"; };
+		4EF5DE08188F1F5400700508 /* ofxSystemContextMenuAbstract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxSystemContextMenuAbstract.h; sourceTree = "<group>"; };
+		4EF5DE09188F23F300700508 /* ofxSystemContextMenuItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxSystemContextMenuItem.mm; sourceTree = "<group>"; };
+		4EF5DE0A188F23F300700508 /* ofxSystemContextMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSystemContextMenuItem.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -127,6 +131,9 @@
 				4EF5DDFC188DDAAD00700508 /* ofxSystemContextMenu.h */,
 				4EF5DE00188DDC3D00700508 /* ofxSystemContextMenuCocoa.h */,
 				4EF5DE01188DDC3D00700508 /* ofxSystemContextMenuCocoa.mm */,
+				4EF5DE08188F1F5400700508 /* ofxSystemContextMenuAbstract.h */,
+				4EF5DE09188F23F300700508 /* ofxSystemContextMenuItem.mm */,
+				4EF5DE0A188F23F300700508 /* ofxSystemContextMenuItem.h */,
 			);
 			name = src;
 			path = ../src;
@@ -306,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EF5DE0B188F23F300700508 /* ofxSystemContextMenuItem.mm in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				4EA6DB9617C549BD0014CE1C /* ofApp.mm in Sources */,
 				4EF5DDFD188DDAAD00700508 /* ofxSystemContextMenu.mm in Sources */,

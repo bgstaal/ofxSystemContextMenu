@@ -1,9 +1,9 @@
 #include "ofApp.h"
 #include "ofxSystemContextMenu.h"
 
-
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup()
+{
 
 }
 
@@ -41,11 +41,20 @@ void ofApp::mouseDragged(int x, int y, int button){
 void ofApp::mousePressed(int x, int y, int button)
 {
 	ofxSystemContextMenu menu;
+	ofAddListener(menu.itemSelected, this, &ofApp::contextMenuItemSelectedHandler);
+	
 	menu.addItem("Lorem");
 	menu.addItem("Ipsum");
 	menu.addItem("Dolor Sit Amet");
 	menu.show();
 }
+
+
+void ofApp::contextMenuItemSelectedHandler(ofxSystemContextMenuEventArgs &e)
+{
+	ofLog() << "item selected: " << e.item->name << endl;
+}
+
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
